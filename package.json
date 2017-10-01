@@ -1,0 +1,30 @@
+{
+  "name": "chammy",
+  "version": "0.0.0",
+  "description": "NPM plugin to package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter=nyan --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korneliakobiela/chammy.git"
+  },
+  "keywords": [
+    "plugin",
+    "chammy",
+    "packagemanager"
+  ],
+  "author": "Kornelia Kobiela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/korneliakobiela/chammy/issues"
+  },
+  "homepage": "https://github.com/korneliakobiela/chammy#readme",
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.8.0",
+    "mocha": "^3.5.3"
+  }
+}

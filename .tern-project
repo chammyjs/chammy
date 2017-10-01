@@ -1,0 +1,14 @@
+{
+  "plugins": {
+    "node": {},
+    "es_modules": {}
+  },
+  "libs": [
+    "ecma5",
+    "ecma6"
+  ],
+  "dontLoad": [
+    "node_modules/**"
+    ],
+  "ecmaVersion": 6
+}
