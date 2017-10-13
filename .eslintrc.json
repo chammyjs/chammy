@@ -7,12 +7,12 @@
 		        "mocha": true
 		    },
     "extends": "eslint:recommended",
-    "parserOptions": {
-		        "sourceType": "module",
-		        "ecmaFeatures": {
-						            "impliedStrict": true
-						        }
-		    },
+		"parserOptions": {
+			 "sourceType": "module",
+			 "ecmaFeatures": {
+					 "impliedStrict": true
+			 }
+	 },
     "rules": {
 		        "indent": [ 2, "tab" ],
 		        "linebreak-style": [ 2, "unix" ],
