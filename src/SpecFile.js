@@ -1,19 +1,25 @@
 const fs = require( 'fs-then-native' );
+
 class SpecFile {
 
-	constructor( path, content ) {
-		this.pat = path;
+	constructor( path, content = '' ) {
+		this.path = path;
 		this.content = content;
 		this.createFile = this.createFile.bind( this );
 		this.readFileContent = this.readFileContent.bind( this );
+		this.deleteFile = this.deleteFile.bind( this );
 	}
 
 	createFile() {
-		return fs.writeToFile( this.path, this.content );
+		return fs.writeFile( this.path, this.content );
 	}
 
-	readFileContent( encoding ) {
+	readFileContent( encoding = 'utf8' ) {
 		return fs.readFile( this.path, encoding );
+	}
+
+	deleteFile() {
+		return fs.unlink( this.path );
 	}
 
 }
