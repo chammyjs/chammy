@@ -3,12 +3,6 @@ const chai = require( 'chai' );
 const expect = chai.expect;
 const fs = require( 'fs-then-native' );
 
-/* eslint new-cap: 0*/
-const logger = require( 'eazy-logger' ).Logger( {
-	prefix: '{blue:[}{green:chammy-tests}{blue:] }',
-	useLevelPrefixes: true
-} );
-
 describe( 'SpecFile', () => {
 
 	it( 'exists', () => {
@@ -27,28 +21,12 @@ describe( 'SpecFile', () => {
 		const filepath = `${dir}/test.txt`;
 
 		beforeEach( () => {
-			fs.mkdir( dir )
-			.then( () => {
-				logger.log( 'Directory created' );
-			} )
-			.catch( ( err ) => {
-				logger.error( 'Cannot create directory' );
-				logger.error( err );
-			} );
+			fs.mkdirSync( dir );
 		} );
 
 		afterEach( () => {
-			fs.unlink( filepath ).then( () => {
-			} ).catch( ( err ) => {
-				logger.error( err );
-			} );
-			fs.rmdir( dir ).then( () => {
-			} )
-			.catch(
-				( err ) => {
-					logger.error( 'Cannot delete directory' );
-					logger.error( err );
-				} );
+			fs.unlinkSync( filepath );
+			fs.rmdirSync( dir );
 		} );
 
 		it( 'should return Promise', () => {
@@ -73,28 +51,12 @@ describe( 'SpecFile', () => {
 		const filepath = `${dir}/test.txt`;
 
 		beforeEach( () => {
-			fs.mkdir( dir )
-			.then( () => {
-				logger.log( 'Directory created' );
-			} )
-			.catch( ( err ) => {
-				logger.error( 'Cannot create directory' );
-				logger.error( err );
-			} );
+			fs.mkdirSync( dir );
 		} );
 
 		afterEach( () => {
-			fs.unlink( filepath ).then( () => {
-			} ).catch( ( err ) => {
-				logger.error( err );
-			} );
-			fs.rmdir( dir ).then( () => {
-			} )
-			.catch(
-				( err ) => {
-					logger.error( 'Cannot delete directory' );
-					logger.error( err );
-				} );
+			fs.unlinkSync( filepath );
+			fs.rmdirSync( dir );
 		} );
 
 		it( 'should return promise', () => {
@@ -139,4 +101,35 @@ describe( 'SpecFile', () => {
 		} );
 
 	} );
+	describe( 'deleteFile', () => {
+
+		const dir = 'fixture';
+		const filepath = `${dir}/test.txt`;
+
+		beforeEach( () => {
+			fs.mkdirSync( dir );
+
+		} );
+
+		afterEach( () => {
+			fs.rmdirSync( dir );
+		} );
+
+		it( 'should return promise', () => {
+			fs.writeFileSync( filepath, '' );
+			const file = new SpecFile( filepath );
+			const out = file.deleteFile();
+			expect( out ).to.be.instanceof( Promise );
+		} );
+
+		it( 'should delete file', ( done ) => {
+			fs.writeFileSync( filepath, '' );
+			const file = new SpecFile( filepath );
+			file.deleteFile().then( () => {
+				done();
+			} );
+		} );
+
+	} );
+
 } );
