@@ -5,9 +5,6 @@ class SpecFile {
 	constructor( path, content = '' ) {
 		this.path = path;
 		this.content = content;
-		this.createFile = this.createFile.bind( this );
-		this.readFileContent = this.readFileContent.bind( this );
-		this.deleteFile = this.deleteFile.bind( this );
 	}
 
 	createFile() {
