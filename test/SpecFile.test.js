@@ -29,10 +29,11 @@ describe( 'SpecFile', () => {
 			fs.rmdirSync( dir );
 		} );
 
-		it( 'should return Promise', () => {
+		it( 'should return Promise', ( done ) => {
 			file = new SpecFile( filepath, 'asssfdfadjkfaldnjklcnjdkgnv' );
 			const out = file.createFile();
 			expect( out ).to.be.instanceOf( Promise );
+			done();
 		} );
 
 		it( 'should write empty file', ( done ) => {
@@ -59,12 +60,15 @@ describe( 'SpecFile', () => {
 			fs.rmdirSync( dir );
 		} );
 
-		it( 'should return promise', () => {
+		it( 'should return promise', ( done ) => {
 			const fileContent = 'abcdsddjksf';
 			const file = new SpecFile( filepath, fileContent );
 			fs.writeFileSync( filepath, fileContent	);
 			const out = file.readFileContent( 'utf8' );
 			expect( out ).to.be.instanceOf( Promise );
+			out.then( () => {
+				done();
+			} );
 		} );
 
 		it( 'should read non empy file', ( done ) => {
@@ -115,11 +119,14 @@ describe( 'SpecFile', () => {
 			fs.rmdirSync( dir );
 		} );
 
-		it( 'should return promise', () => {
+		it( 'should return promise', ( done ) => {
 			fs.writeFileSync( filepath, '' );
 			const file = new SpecFile( filepath );
 			const out = file.deleteFile();
 			expect( out ).to.be.instanceof( Promise );
+			out.then( () => {
+				done();
+			} );
 		} );
 
 		it( 'should delete file', ( done ) => {
