@@ -25,8 +25,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "eslint": "^3.19.0",
-    "mocha": "^3.5.3"
+    "eslint": "^4.9.0",
+    "mocha": "^4.0.1"
   },
   "dependencies": {
     "eazy-logger": "^3.0.2",
