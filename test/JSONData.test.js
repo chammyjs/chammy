@@ -57,6 +57,43 @@ describe( 'JSONData', () => {
 		it( 'return undefined if property doesn\'t defined', () => {
 			expect( data2.getProperty(  ) ).to.deep.equal( undefined );
 		} );
+
 	} );
 
+	describe( 'getData', () => {
+
+		const json = { a: 'afdaga', b: 123, c: true };
+		const data = new JSONData( JSON.stringify( json ) );
+		const data2 = new JSONData();
+
+		it( 'should return a JSON string', () => {
+			expect( data.getData() ).to.deep.equal( JSON.stringify( json ) );
+		} );
+
+		it( 'should return a JSON string of empty Object if empty', () => {
+			expect( data2.getData() ).to.deep.equal( JSON.stringify( {} ) );
+		} );
+
+	} );
+	describe( 'hasProperty', () => {
+
+		const json = { a: 'afdaga', b: 123, c: true };
+		const data = new JSONData( JSON.stringify( json ) );
+
+		it( 'return a Boolean', () => {
+			expect( data.hasProperty() ).to.be.an( 'boolean' );
+		} );
+
+		it( 'return true if property exists', () => {
+			expect( data.hasProperty( 'a' ) ).to.equal( true );
+		} );
+
+		it( 'return false if property doesn\'t exists', () => {
+			expect( data.hasProperty( 'dd' ) ).to.equal( false );
+		} );
+
+		it( 'return false if property is not given', () => {
+			expect( data.hasProperty() ).to.equal( false );
+		} );
+	} );
 } );
