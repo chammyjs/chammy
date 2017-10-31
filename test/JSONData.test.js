@@ -75,6 +75,7 @@ describe( 'JSONData', () => {
 		} );
 
 	} );
+
 	describe( 'hasProperty', () => {
 
 		const json = { a: 'afdaga', b: 123, c: true };
@@ -95,5 +96,18 @@ describe( 'JSONData', () => {
 		it( 'return false if property is not given', () => {
 			expect( data.hasProperty() ).to.equal( false );
 		} );
+	} );
+	describe( 'setValue', () => {
+		const json = { a: 'afdaga', b: 123, c: true };
+		const data = new JSONData( JSON.stringify( json ) );
+
+		it( 'return string', () => {
+			expect( data.setValue( 'd', 123 ) ).to.be.an( 'string' );
+		} );
+
+		it( 'change data property', () => {
+			expect( data.setValue( 'd', 123 ) ).to.deep.equal( data.data ).but.not.to.deep.equal( JSON.stringify( json ) );
+		} );
+
 	} );
 } );
