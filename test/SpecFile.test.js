@@ -33,7 +33,9 @@ describe( 'SpecFile', () => {
 			file = new SpecFile( filepath, 'asssfdfadjkfaldnjklcnjdkgnv' );
 			const out = file.createFile();
 			expect( out ).to.be.instanceOf( Promise );
-			done();
+			out.then( () => {
+				done();
+			} );
 		} );
 
 		it( 'should write empty file', ( done ) => {

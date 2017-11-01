@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "eazy-logger": "^3.0.2",
-    "fs-then-native": "^2.0.0"
+    "fs-then-native": "^2.0.0",
+    "terminal-kit": "^1.14.0"
   }
 }
