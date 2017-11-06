@@ -31,6 +31,7 @@
   "dependencies": {
     "eazy-logger": "^3.0.2",
     "fs-then-native": "^2.0.0",
+    "meow": "^3.7.0",
     "terminal-kit": "^1.14.0"
   }
 }
