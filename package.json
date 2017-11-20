@@ -1,6 +1,6 @@
 {
-  "name": "chammy",
-  "version": "0.0.0",
+  "name": "@chammy/chammy",
+  "version": "0.1.0",
   "description": "NPM plugin to package manager",
   "main": "index.js",
   "scripts": {
@@ -22,16 +22,20 @@
   },
   "homepage": "https://github.com/korneliakobiela/chammy#readme",
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^3.19.0",
     "mocha": "^3.5.3"
   },
   "dependencies": {
+    "architect": "^0.1.13",
     "eazy-logger": "^3.0.2",
     "fs-then-native": "^2.0.0",
     "meow": "^3.7.0",
-    "terminal-kit": "^1.14.0"
+    "terminal-kit": "^1.14.3"
+  },
+  "directories": {
+    "test": "test"
   }
 }

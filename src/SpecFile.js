@@ -9,8 +9,9 @@ class SpecFile {
 	/**
 	 * constructor - description
 	 *
-	 * @param  {string} path         description
-	 * @param  {string} content = '' description
+	 * @param  {string} path         a specyfic path to file
+	 * @param  {string} content = '' a specyfic content (text) of file,
+	 * 															if not given, there is empty string by default
 	 */
 
 	constructor( path, content = '' ) {
