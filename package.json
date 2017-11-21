@@ -4,7 +4,7 @@
   "description": "CLI tool invited to generate your js projects structure simply and nice",
   "main": "./chammy.js",
   "scripts": {
-    "test": "mocha --reporter=nyan --compilers js:babel-register"
+    "test": "mocha --reporter=nyan --require babel-register"
   },
   "repository": {
     "type": "git",
