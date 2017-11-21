@@ -1,8 +1,8 @@
 {
-  "name": "chammy",
-  "version": "0.0.0",
-  "description": "NPM plugin to package manager",
-  "main": "index.js",
+  "name": "@chammy/chammy",
+  "version": "0.1.0",
+  "description": "CLI tool invited to generate your js projects structure simply and nice",
+  "main": "./chammy.js",
   "scripts": {
     "test": "mocha --reporter=nyan --compilers js:babel-register"
   },
@@ -15,22 +15,29 @@
     "chammy",
     "packagemanager"
   ],
-  "author": "Kornelia Kobiela",
+  "author": "Chammy.js",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/korneliakobiela/chammy/issues"
   },
   "homepage": "https://github.com/korneliakobiela/chammy#readme",
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^4.9.0",
     "mocha": "^4.0.1"
   },
   "dependencies": {
-    "eazy-logger": "^3.0.2",
+    "enumify": "^1.0.4",
     "fs-then-native": "^2.0.0",
-    "terminal-kit": "^1.14.0"
-  }
+    "meow": "^3.7.0",
+    "terminal-kit": "^1.14.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+	"bin": {
+		"chammy": "./chammy.js"
+	}
 }
