@@ -31,7 +31,7 @@
   "dependencies": {
     "enumify": "^1.0.4",
     "fs-then-native": "^2.0.0",
-    "meow": "^3.7.0",
+    "meow": "^4.0.0",
     "terminal-kit": "^1.14.3"
   },
   "directories": {
