@@ -37,7 +37,7 @@
   "directories": {
     "test": "test"
   },
-	"bin": {
-		"chammy": "./chammy.js"
-	}
+  "bin": {
+    "chammy": "./chammy.js"
+  }
 }
