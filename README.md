@@ -6,3 +6,5 @@
 [![Build Status](https://travis-ci.org/chammyjs/chammy.svg?branch=master)](https://travis-ci.org/chammyjs/chammy)
 
 JavaScript project structure generator.
+
+**:rotating_light: [WE MOVED TO GITLAB](https://gitlab.com/chammyjs/chammy) :rotating_light:**
